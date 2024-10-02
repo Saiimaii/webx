@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="mt-4 text-center text-4xl">
+    <h1 class="my-4">HTMX with Django</h1>
+    <div id="result">
+        Waiting for update...
+    </div>
+    <div class="my-4">
+        <button hx-get="{% url 'update_content' %}" hx-target="#result" hx-swap="outerHTML" class"btn-blue">
+            Click me to update...
+        </button>
+    </div> 
+    <from>
+
+    </form>   
+
+    <div id="result2">
+        Waiting for form submission...
+    </div>
+
+    <h1>Todo List</h1>
+    <from hx-post="{% url 'add_todo' %}" hx-target="#todo-list" hx-sp>
+</div> 
+{% endblock content %}

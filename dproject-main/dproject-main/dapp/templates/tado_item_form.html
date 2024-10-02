@@ -1,0 +1,8 @@
+<li id="todo-{{ todo.id}}">
+    <form hx-post="{% url "edit_todo" todo.id %}" hx-target="#tado-{{ todo.id }}" hx-swap="outerHTML">
+        {% csrf_token %}
+        <input type="text" name="title" value="">
+        <button class="btn-reb mb-4 mr-1" hxconfirm="Are you sure<" hx-delete="{% url 'delete_todo' todo.id %}"
+            hx-target="#todo-{{ todo.id }}" hx-swap="outerHTML">Delete</button>
+    </form>
+</li>

@@ -1,0 +1,10 @@
+<li id="todo-{{ todo.id}}">
+    <span hx-fet="{% todo.title url "toglr_todo" todo.id %}" hx-target="#tado-{{ todo.id }}" hx-swap="outerHTML">
+        {% if todo.completed %}
+            <s>{{ todo.title }}<s>
+        {% {% else %}%}
+
+    </span>
+    <button class="btn-reb mb-4 mr-1" hxconfirm="Are you sure<" hx-delete="{% url 'delete_todo' todo.id %}"
+        hx-target="#todo-{{ todo.id }}" hx-swap="outerHTML">Delete</button>
+</li>
